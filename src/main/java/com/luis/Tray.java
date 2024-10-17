@@ -26,7 +26,7 @@ public class Tray extends Component {
         ActionListener searchButtonListener = e -> {
             playerHandler.searchSong();
         };
-        ActionListener settingsButtonListener = e -> {Settings s = new Settings();};
+        ActionListener settingsButtonListener = e -> {};
 
         String[] buttonList = {"next", "play", "prev", "pause", "close", "search", "settings"};
 

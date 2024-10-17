@@ -4,25 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a48ca0c2-34af-49f7-a51e-8b7858216723" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/luis/GlobalListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/luis/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/luis/PathHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/luis/PlayerHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/luis/SearchBar.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/luis/Settings.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/luis/Tray.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/ostrayIcon.png" afterDir="false" />
+    <list default="true" id="a48ca0c2-34af-49f7-a51e-8b7858216723" name="Changes" comment="initial commit">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/luis/FilePicker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/luis/PathHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luis/PathHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/luis/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luis/SettingsScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/luis/Tray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luis/Tray.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,13 +63,27 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Record" />
         <option value="Class" />
+        <option value="package-info" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Luiszf&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;git@github.com:Luiszf/ostray.git&quot;,
+    &quot;accountId&quot;: &quot;d1511e03-bbb7-49ff-89f1-7b7bf0115355&quot;
+  }
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
 }</component>
@@ -89,34 +92,35 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Main.executor&quot;: &quot;Java Profile Executor&quot;,
-    &quot;Gradle.Build OSTtray.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.C:/Users/Luis/Development/OSTtray [Main.main()].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.OSTtray [:Main.main()].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.OSTtray [assemble].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.OSTtray [buildDependents].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.OSTtray [build].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.OSTtray [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.OSTtray [jar].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.OSTtray [run].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.OSTtray [shadowJar].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.OSTtray [wrapper].executor&quot;: &quot;Run&quot;,
-    &quot;JAR Application.OSTray.jar.executor&quot;: &quot;Run&quot;,
-    &quot;JAR Application.OSTtray-1.0-SNAPSHOT-all.jar.executor&quot;: &quot;Run&quot;,
-    &quot;JAR Application.OSTtray-1.0-SNAPSHOT.jar.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Luis/Development/OSTtray/src/main/resources&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Java Profile Executor",
+    "Gradle.Build OSTtray.executor": "Run",
+    "Gradle.C:/Users/Luis/Development/OSTtray [Main.main()].executor": "Run",
+    "Gradle.OSTtray [:Main.main()].executor": "Run",
+    "Gradle.OSTtray [assemble].executor": "Run",
+    "Gradle.OSTtray [buildDependents].executor": "Run",
+    "Gradle.OSTtray [build].executor": "Run",
+    "Gradle.OSTtray [clean].executor": "Run",
+    "Gradle.OSTtray [jar].executor": "Run",
+    "Gradle.OSTtray [run].executor": "Run",
+    "Gradle.OSTtray [shadowJar].executor": "Run",
+    "Gradle.OSTtray [wrapper].executor": "Run",
+    "JAR Application.OSTray.jar.executor": "Run",
+    "JAR Application.OSTtray-1.0-SNAPSHOT-all.jar.executor": "Run",
+    "JAR Application.OSTtray-1.0-SNAPSHOT.jar.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/Luis/Development/OSTtray/src/main/resources",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Luis\Development\OSTtray\src\main\resources" />
@@ -226,20 +230,10 @@
       <option name="workspaceLocation" value="$PROJECT_DIR$" />
       <method v="2" />
     </configuration>
-    <configuration default="true" type="LiferayServerConfiguration" factoryName="Liferay Server">
-      <Liferay-Sever alternativeJrePath="" bundleLocation="" bundleType="" developerMode="true" gogoShellPort="11311" vmParameters="-Xmx2560m -XX:MaxMetaspaceSize=768m -XX:MetaspaceSize=768m">
-        <envs>
-          <env name="PATH" value="$USER_HOME$/scoop/apps/zulu21-jdk/current/bin:C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files\Zulu\zulu-8\bin\;C:\Program Files (x86)\VMware\VMware Player\bin\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files\Airshipper\;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Program Files\Tailscale\;C:\Program Files\Go\bin;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\ojdkbuild\java-17-openjdk-17.0.3.0.6-1\bin;C:\Program Files\ojdkbuild\java-11-openjdk-11.0.15-1\bin;C:\Program Files\playit_gg\bin\;C:\Users\Luis\.jpm\windows\bin;C:\Users\Luis\.cargo\bin;C:\Users\Luis\AppData\Local\Programs\Python\Launcher\;C:\Users\Luis\scoop\apps\zulu21-jdk\current\bin;C:\Users\Luis\scoop\shims;C:\Users\Luis\AppData\Local\Microsoft\WindowsApps;C:\Users\Luis\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Luis\AppData\Roaming\npm;C:\Program Files\Neovim\bin;C:\Users\Luis\go\bin;C:\Users\Luis\AppData\Local\Microsoft\WinGet\Packages\glzr-io.glazewm_Microsoft.Winget.Source_8wekyb3d8bbwe;C:\Users\Luis\AppData\Local\Microsoft\WinGet\Packages\sharkdp.fd_Microsoft.Winget.Source_8wekyb3d8bbwe\fd-v10.1.0-x86_64-pc-windows-msvc;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2024.1.4\bin;;C:\Users\Luis\AppData\Local\Microsoft\WinGet\Packages\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\ffmpeg-7.0.2-full_build\bin;;C:\Program Files\JetBrains\PyCharm Community Edition 2024.2.3\bin;" />
-          <env name="JAVA_HOME" value="$USER_HOME$/scoop/apps/zulu21-jdk/current" />
-        </envs>
-        <module name="OSTtray" />
-      </Liferay-Sever>
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.OSTtray [shadowJar]" />
         <item itemvalue="JAR Application.OSTtray-1.0-SNAPSHOT-all.jar" />
+        <item itemvalue="Gradle.OSTtray [shadowJar]" />
         <item itemvalue="JAR Application.OSTtray-1.0-SNAPSHOT.jar" />
         <item itemvalue="Gradle.OSTtray [jar]" />
         <item itemvalue="Gradle.OSTtray [clean]" />
@@ -255,6 +249,15 @@
       <option name="presentableId" value="Default" />
       <updated>1727221306067</updated>
     </task>
+    <task id="LOCAL-00001" summary="initial commit">
+      <option name="closed" value="true" />
+      <created>1729038696590</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1729038696590</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -267,5 +270,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="initial commit&#10;todo:&#10;- [ ] settings&#10;- [ ] ui design" />
+    <MESSAGE value="initial commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="initial commit" />
   </component>
 </project>

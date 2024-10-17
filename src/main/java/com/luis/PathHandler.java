@@ -1,7 +1,6 @@
 package com.luis;
 
-import java.io.File;
-import java.io.FilenameFilter;
+import java.io.*;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -11,7 +10,10 @@ public class PathHandler {
     List<String> songs;
 
     PathHandler(){
-        rootPath = "C:\\Users\\Luis\\Music\\";
+
+        FilePicker filePicker = new FilePicker();
+        rootPath = filePicker.chooseDir;
+        System.out.println(rootPath);
     }
 
 
