@@ -10,8 +10,7 @@ public class PathHandler {
     List<String> songs;
 
     PathHandler(){
-
-        FilePicker filePicker = new FilePicker();
+        FilePicker filePicker = new FilePicker(true);
         rootPath = filePicker.chooseDir;
         System.out.println(rootPath);
     }

@@ -11,30 +11,25 @@ import java.util.Scanner;
 public class FilePicker {
 
     String chooseDir;
-    FilePicker() {
-        try {
-            File options = new File("./options.txt");
-            if (options.exists()){
-                Scanner scanner = new Scanner(options);
-                chooseDir= scanner.nextLine();
-                scanner.close();
-            };
-            if (chooseDir != null) return;
-        } catch (FileNotFoundException | NoSuchElementException e) {
-            System.out.println("Options file not found\n error :" + e);
+
+    FilePicker(boolean scan) {
+
+        getSettings gs = new getSettings();
+        if (scan) gs.scan();
+        if (!gs.options.getFirst().isEmpty()) {
+            chooseDir = gs.options.getFirst();
+            return;
         }
-        FileDialog dialog = new FileDialog((Frame)null, "Select File to Open");
+
+
+        FileDialog dialog = new FileDialog((Frame) null, "Select File to Open");
         dialog.setMode(FileDialog.LOAD);
         dialog.setVisible(true);
         chooseDir = new File(dialog.getDirectory()).getAbsolutePath();
-        try {
-            File options = new File("./options.txt");
-            FileWriter fw = new FileWriter(options);
-            fw.write(chooseDir);
-            fw.close();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+
+        gs.scan();
+        gs.options.set(0, chooseDir);
+        gs.write();
 
         dialog.dispose();
     }

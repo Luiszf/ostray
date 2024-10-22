@@ -36,7 +36,6 @@ public class SearchBar extends Frame {
 
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         int width = (int) screenSize.getWidth()/2;
-        int height = (int) screenSize.getHeight();
 
         frame.setLocation(width - 297, 200);
         System.out.println(frame.getMaximizedBounds());
