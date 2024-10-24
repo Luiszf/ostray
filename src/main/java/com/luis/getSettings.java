@@ -11,10 +11,10 @@ import java.util.Scanner;
 
 public class getSettings {
 
-    ArrayList<String> options = new ArrayList<>();
+    public ArrayList<String> options = new ArrayList<>();
     File optionsFile = new File("./options.txt");
 
-    getSettings() {
+    public getSettings() {
         options.addAll(List.of("","","","", ""));
 
         if(!optionsFile.exists()) {
@@ -26,7 +26,7 @@ public class getSettings {
         }
     }
 
-    void scan() {
+    public void scan() {
         Scanner scanner = null;
         try {
             scanner = new Scanner(optionsFile);
@@ -41,7 +41,7 @@ public class getSettings {
         }
         scanner.close();
     }
-    void write() {
+    public void write() {
         try {
             File optionsFile = new File("./options.txt");
             FileWriter fw = new FileWriter(optionsFile);

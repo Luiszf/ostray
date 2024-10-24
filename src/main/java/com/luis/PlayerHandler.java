@@ -1,6 +1,8 @@
 package com.luis;
 
 
+import com.luis.components.SearchBar;
+
 import javax.sound.sampled.*;
 import java.io.File;
 import java.io.IOException;
@@ -10,25 +12,25 @@ import java.util.List;
 
 public class PlayerHandler {
 
-    int index = 0;
+    public int index = 0;
     boolean isPaused = true;
     Clip clip = null;
     List<String> songs = null;
     PathHandler pathHandler;
 
 
-    List<String> getSongs(String query) {
+    public List<String> getSongs(String query) {
         pathHandler = new PathHandler();
         songs = pathHandler.queryMusicFiles(query);
         return songs;
     }
 
-    List<String> addSong(String songPath) {
+    public List<String> addSong(String songPath) {
         songs = pathHandler.addMusicFiles(songPath, index);
         return songs;
     }
 
-    void getPlayer() {
+    public void getPlayer() {
         try {
             clip = AudioSystem.getClip();
 
@@ -50,7 +52,7 @@ public class PlayerHandler {
         }
     }
 
-    void play() {
+    public void play() {
         isPaused = false;
         AudioInputStream in = pathToAudioInput(songs.get(index));
         try {

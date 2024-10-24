@@ -1,10 +1,8 @@
 package com.luis;
 
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.Arrays;
-import java.util.Scanner;
+import com.luis.components.SettingsScreen;
+import com.luis.components.Tray;
 
 public class Main {
 
@@ -12,6 +10,8 @@ public class Main {
         PlayerHandler playerHandler = new PlayerHandler();
         Tray tray = new Tray(playerHandler);
         GlobalListener gl = new GlobalListener(playerHandler);
+        var s = new SettingsScreen();
+        s.build();
     }
 
 }

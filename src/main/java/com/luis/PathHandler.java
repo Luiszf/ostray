@@ -1,15 +1,17 @@
 package com.luis;
 
+import com.luis.components.FilePicker;
+
 import java.io.*;
 import java.util.*;
 import java.util.stream.Collectors;
 
 public class PathHandler {
 
-    String rootPath;
+    public String rootPath;
     List<String> songs;
 
-    PathHandler(){
+    public PathHandler(){
         FilePicker filePicker = new FilePicker(true);
         rootPath = filePicker.chooseDir;
         System.out.println(rootPath);

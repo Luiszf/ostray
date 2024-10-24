@@ -5,15 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a48ca0c2-34af-49f7-a51e-8b7858216723" name="Changes" comment="initial commit">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/luis/getSettings.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/luis/FilePicker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luis/FilePicker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/luis/GlobalListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luis/GlobalListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/luis/FilePicker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luis/components/FilePicker.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/luis/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luis/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/luis/PathHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luis/PathHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/luis/SearchBar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luis/SearchBar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/luis/SettingsScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luis/SettingsScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/luis/Tray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luis/Tray.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/luis/PlayerHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luis/PlayerHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/luis/SearchBar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luis/components/SearchBar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/luis/SettingsScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luis/components/SettingsScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/luis/Tray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luis/components/Tray.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/luis/getSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luis/getSettings.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,7 +136,7 @@
       <module name="OSTtray.main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.luis.*" />
+          <option name="PATTERN" value="com.luis.components.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>

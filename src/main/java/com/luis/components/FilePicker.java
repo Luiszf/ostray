@@ -1,18 +1,15 @@
-package com.luis;
+package com.luis.components;
+
+import com.luis.getSettings;
 
 import java.awt.*;
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.NoSuchElementException;
-import java.util.Scanner;
 
 public class FilePicker {
 
-    String chooseDir;
+    public String chooseDir;
 
-    FilePicker(boolean scan) {
+    public FilePicker(boolean scan) {
 
         getSettings gs = new getSettings();
         if (scan) gs.scan();
