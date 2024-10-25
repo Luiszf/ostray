@@ -61,6 +61,7 @@ public class PlayerHandler {
             throw new RuntimeException(e);
         }
         clip.start();
+        System.gc();
         if (isLooping) return;
         index += 1;
         if (index == songs.size()) {

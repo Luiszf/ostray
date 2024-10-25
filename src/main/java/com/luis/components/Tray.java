@@ -19,7 +19,8 @@ public class Tray extends Component {
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
-        playerHandler.getPlayer(); ActionListener playListener = e -> playerHandler.play(); ActionListener nextButtonListener = e -> playerHandler.nextSong();
+        playerHandler.getPlayer();
+        ActionListener playListener = e -> playerHandler.play(); ActionListener nextButtonListener = e -> playerHandler.nextSong();
         ActionListener prevButtonListener = e -> playerHandler.previousSong();
         ActionListener pauseButtonListener = e -> playerHandler.pauseSong();
         ActionListener closeButtonListener = e -> System.exit(0);
