@@ -14,6 +14,7 @@ public class PlayerHandler {
 
     public int index = 0;
     boolean isPaused = true;
+    public boolean isLooping = false;
     Clip clip = null;
     List<String> songs = null;
     PathHandler pathHandler;
@@ -25,9 +26,8 @@ public class PlayerHandler {
         return songs;
     }
 
-    public List<String> addSong(String songPath) {
+    public void addSong(String songPath) {
         songs = pathHandler.addMusicFiles(songPath, index);
-        return songs;
     }
 
     public void getPlayer() {
@@ -61,6 +61,7 @@ public class PlayerHandler {
             throw new RuntimeException(e);
         }
         clip.start();
+        if (isLooping) return;
         index += 1;
         if (index == songs.size()) {
             index = 0;
@@ -83,12 +84,12 @@ public class PlayerHandler {
         play();
     }
     public void searchSong() {
-        SearchBar searchBar = new SearchBar(this);
+        new SearchBar(this, pathHandler);
     }
 
     private AudioInputStream pathToAudioInput(String path) {
         File file = new File(path);
-        AudioInputStream audioInputStream = null;
+        AudioInputStream audioInputStream;
         try {
             audioInputStream = AudioSystem.getAudioInputStream(file);
         } catch (UnsupportedAudioFileException | IOException e) {
@@ -102,13 +103,11 @@ public class PlayerHandler {
                 baseAudioFormat.getChannels() * 2,
                 baseAudioFormat.getSampleRate(),
                 false);
-        AudioInputStream in = AudioSystem.getAudioInputStream(decodeFormat, audioInputStream);
-
-        return in;
+        return AudioSystem.getAudioInputStream(decodeFormat, audioInputStream);
     }
 
     public void previousSong() {
-        if(index > 1) index += -2 ;
+        if(index > 1) index -= 2;
         if(index == 0) index = songs.size() - 2;
         if(index == 1) index = songs.size() - 1;
         System.out.println(index);

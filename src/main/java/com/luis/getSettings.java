@@ -5,7 +5,6 @@ import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
@@ -15,9 +14,9 @@ public class getSettings {
     File optionsFile = new File("./options.txt");
 
     public getSettings() {
-        options.addAll(List.of("","","","", ""));
+        options.addAll(List.of("", "", "", "", ""));
 
-        if(!optionsFile.exists()) {
+        if (!optionsFile.exists()) {
             try {
                 optionsFile.createNewFile();
             } catch (IOException e) {
@@ -27,7 +26,7 @@ public class getSettings {
     }
 
     public void scan() {
-        Scanner scanner = null;
+        Scanner scanner;
         try {
             scanner = new Scanner(optionsFile);
         } catch (FileNotFoundException e) {
@@ -41,6 +40,7 @@ public class getSettings {
         }
         scanner.close();
     }
+
     public void write() {
         try {
             File optionsFile = new File("./options.txt");

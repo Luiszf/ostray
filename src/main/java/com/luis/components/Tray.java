@@ -1,5 +1,6 @@
 package com.luis.components;
 
+import com.luis.GlobalListener;
 import com.luis.PlayerHandler;
 
 import java.awt.*;
@@ -8,10 +9,10 @@ import java.awt.event.*;
 public class Tray extends Component {
 
 
-    public Tray(PlayerHandler playerHandler) {
+    public Tray(PlayerHandler playerHandler, GlobalListener globalListener) {
         SystemTray tray = SystemTray.getSystemTray();
         MediaTracker tracker = new MediaTracker(this);
-        Image image = Toolkit.getDefaultToolkit().getImage("src\\main\\resources\\ostrayIcon.png");
+        Image image = Toolkit.getDefaultToolkit().getImage("res\\ostrayIcon.png");
         tracker.addImage(image, 0);
         try {
             tracker.waitForAll();
@@ -22,11 +23,9 @@ public class Tray extends Component {
         ActionListener prevButtonListener = e -> playerHandler.previousSong();
         ActionListener pauseButtonListener = e -> playerHandler.pauseSong();
         ActionListener closeButtonListener = e -> System.exit(0);
-        ActionListener searchButtonListener = e -> {
-            playerHandler.searchSong();
-        };
+        ActionListener searchButtonListener = e -> playerHandler.searchSong();
         ActionListener settingsButtonListener = e -> {var s = new SettingsScreen();
-        s.build();};
+        s.build(globalListener);};
 
         String[] buttonList = {"next", "play", "prev", "pause", "close", "search", "settings"};
 
@@ -49,7 +48,7 @@ public class Tray extends Component {
         try {
             tray.add(trayIcon);
         } catch (AWTException e) {
-            System.err.println(e);
+            throw new RuntimeException(e);
         }
     }
 

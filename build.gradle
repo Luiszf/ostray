@@ -15,7 +15,7 @@ test {
 }
 dependencies {
     implementation 'com.github.umjammer:mp3spi:1.9.15'
-    implementation 'lc.kra.system:system-hook:3.8'
+    implementation 'com.github.kwhat:jnativehook:2.2.2'
     testImplementation platform('org.junit:junit-bom:5.10.0')
     testImplementation 'org.junit.jupiter:junit-jupiter'
 }

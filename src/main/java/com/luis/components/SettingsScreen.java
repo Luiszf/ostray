@@ -1,104 +1,30 @@
 package com.luis.components;
 
+import com.github.kwhat.jnativehook.keyboard.NativeKeyEvent;
+import com.luis.GlobalListener;
 import com.luis.getSettings;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.util.Arrays;
 
 public class SettingsScreen extends JPanel{
-    String key = "" ;
-    KeyListener kl;
-    JTextField prevInput;
-    // TODO: implement settings system
-    public void build(){
 
-        getSettings gs = new getSettings();
+    getSettings gs = new getSettings();
+
+    public void build(GlobalListener globalListener){
+
 
         JFrame settingsWindow = new JFrame();
 
-        MouseListener ml = new MouseListener() {
+        MouseListener ml = new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                FilePicker filePicker = new FilePicker(false);
-            }
-
-            @Override
-            public void mousePressed(MouseEvent e) {
-
-            }
-
-            @Override
-            public void mouseReleased(MouseEvent e) {
-
-            }
-
-            @Override
-            public void mouseEntered(MouseEvent e) {
-
-            }
-
-            @Override
-            public void mouseExited(MouseEvent e) {
-
+                new FilePicker(false);
             }
         };
-        kl = new KeyListener() {
-            @Override
-            public void keyTyped(KeyEvent e) {
 
-            }
-
-            @Override
-            public void keyPressed(KeyEvent e) {
-                if (key.contains(KeyEvent.getKeyText(e.getKeyCode()))) return;
-                key = key + " " + KeyEvent.getKeyText(e.getKeyCode());
-            }
-
-            @Override
-            public void keyReleased(KeyEvent e) {
-                prevInput.setText(key);
-                prevInput.setFocusable(false);
-            }
-        };
-        FocusListener fl = new FocusListener() {
-            @Override
-            public void focusGained(FocusEvent e) {
-                key = "";
-                prevInput.setText("");
-            }
-
-            @Override
-            public void focusLost(FocusEvent e) {
-
-            }
-        };
-        MouseListener newml = new MouseListener() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                prevInput.setFocusable(true);
-            }
-
-            @Override
-            public void mousePressed(MouseEvent e) {
-
-            }
-
-            @Override
-            public void mouseReleased(MouseEvent e) {
-
-            }
-
-            @Override
-            public void mouseEntered(MouseEvent e) {
-
-            }
-
-            @Override
-            public void mouseExited(MouseEvent e) {
-
-            }
-        };
         Font font = new Font("Serif", Font.PLAIN, 24);
         settingsWindow.setFont(font);
         settingsWindow.setTitle("OSTray Settings");
@@ -112,26 +38,58 @@ public class SettingsScreen extends JPanel{
         JLabel text = new JLabel("change root file: ");
 
         JLabel prev = new JLabel("prev");
-        prevInput = new JTextField(10);
-        prevInput.addKeyListener(kl);
-        prevInput.addFocusListener(fl);
-        prevInput.addMouseListener(newml);
-        JPanel inputPicker = new JPanel();
-        inputPicker.add(prev);
-        inputPicker.add(prevInput);
+        JLabel play = new JLabel("play");
+        JLabel next = new JLabel("next");
+        JLabel search = new JLabel("search");
+        JTextField prevInput = new JTextField(20);
+        JTextField playInput = new JTextField(20);
+        JTextField nextInput = new JTextField(20);
+        JTextField searchInput = new JTextField(20);
+        gs.scan();
+        prevInput.setText(keyCodesToString(gs.options.get(1)));
+        playInput.setText(keyCodesToString(gs.options.get(2)));
+        nextInput.setText(keyCodesToString(gs.options.get(3)));
+        searchInput.setText(keyCodesToString(gs.options.get(4)));
+        new InputAdapter(prevInput, globalListener.keyPressed, gs, 1);
+        new InputAdapter(playInput, globalListener.keyPressed, gs, 2);
+        new InputAdapter(nextInput, globalListener.keyPressed, gs, 3);
+        new InputAdapter(searchInput, globalListener.keyPressed, gs, 4);
+        JPanel playInputPicker = new JPanel();
+        JPanel prevInputPicker = new JPanel();
+        JPanel nextInputPicker = new JPanel();
+        JPanel searchInputPicker = new JPanel();
+        prevInputPicker.add(prev);
+        prevInputPicker.add(prevInput);
+        playInputPicker.add(play);
+        playInputPicker.add(playInput);
+        nextInputPicker.add(next);
+        nextInputPicker.add(nextInput);
+        searchInputPicker.add(search);
+        searchInputPicker.add(searchInput);
+        settingsWindow.getContentPane().add(text);
+        settingsWindow.add(filePicker);
 
-        //settingsWindow.getContentPane().add(text);
-        //settingsWindow.add(filePicker);
-
-
-
-        settingsWindow.add(inputPicker);
-        settingsWindow.setLayout(new FlowLayout(FlowLayout.LEFT));
-        settingsWindow.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        settingsWindow.add(prevInputPicker);
+        settingsWindow.add(playInputPicker);
+        settingsWindow.add(nextInputPicker);
+        settingsWindow.add(searchInputPicker);
+        settingsWindow.setLayout(new GridLayout(6, 1, 2, 2 ));
+        settingsWindow.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         settingsWindow.setSize(800, 500);
         settingsWindow.setLocation(width - 297, 200);
         settingsWindow.setVisible(true);
 
+    }
+
+    String keyCodesToString(String keycodes) {
+        StringBuilder formatted = new StringBuilder();
+        var keycodeList = Arrays.stream(keycodes.split(",")).toList();
+        for (String s : keycodeList) {
+            if (s.isEmpty()) break;
+            int element = Integer.parseInt(s.trim());
+            formatted.append(NativeKeyEvent.getKeyText(element)).append(" ");
+        }
+        return formatted.toString();
     }
 }
 

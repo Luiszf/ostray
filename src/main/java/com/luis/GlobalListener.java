@@ -1,73 +1,51 @@
 package com.luis;
 
-import lc.kra.system.keyboard.GlobalKeyboardHook;
-import lc.kra.system.keyboard.event.GlobalKeyEvent;
-import lc.kra.system.keyboard.event.GlobalKeyListener;
-
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileWriter;
-import java.io.IOException;
+import com.github.kwhat.jnativehook.keyboard.NativeKeyListener;
+import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Scanner;
+import java.util.List;
+import com.github.kwhat.jnativehook.keyboard.NativeKeyEvent;
 
-public class GlobalListener {
+public class GlobalListener implements NativeKeyListener {
 
+    public ArrayList<Integer> keyPressed = new ArrayList<>();
+    getSettings gs = new getSettings();
+    PlayerHandler playerHandler;
 
-    GlobalListener(PlayerHandler playerHandler) {
+    public GlobalListener(PlayerHandler playerHandler) {
+        this.playerHandler = playerHandler;
+    }
 
-        getSettings gs = new getSettings();
+    public void nativeKeyPressed(NativeKeyEvent e) {
+        if (keyPressed.contains(e.getKeyCode())) return;
+        keyPressed.add(e.getKeyCode());
+    }
+
+    public void nativeKeyReleased(NativeKeyEvent e) {
         gs.scan();
-        var options = gs.options;
-
-        int[] keybinds = new int[5];
-        if (options.get(1).isEmpty()) {
-            try {
-                File optionsFile = new File("./options.txt");
-                FileWriter fw = new FileWriter(optionsFile);
-                fw.append(options.get(0)).append("\n");
-                fw.append("177\n");
-                fw.append("179\n");
-                fw.append("176\n");
-                fw.append("164\n");
-                fw.close();
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
+        if (optionsToKeybind(gs.options.get(1)).toString().equals(keyPressed.toString())){
+            playerHandler.previousSong();
         }
-
-        gs.scan();
-
-        for (int i = 1; i < keybinds.length; i++) {
-            var index = Integer.parseInt(options.get(i));
-            keybinds[i - 1] = index;
+        if (optionsToKeybind(gs.options.get(2)).toString().equals(keyPressed.toString())){
+            playerHandler.play();
         }
+        if (optionsToKeybind(gs.options.get(3)).toString().equals(keyPressed.toString())){
+            playerHandler.nextSong();
+        }
+        if (optionsToKeybind(gs.options.get(4)).toString().equals(keyPressed.toString())){
+            playerHandler.searchSong();
+        }
+        keyPressed.clear();
+    }
 
+    public void nativeKeyTyped(NativeKeyEvent e) {
+    }
 
-        new Thread(() -> {
-            GlobalKeyboardHook keyboardHook = new GlobalKeyboardHook(false);
+    private ArrayList<Integer> optionsToKeybind(String options) {
+        if (options.isEmpty()) return new ArrayList<>(5);
+        List<String> s = Arrays.stream(options.split(",")).toList();
+        var y = s.stream().map(Integer::parseInt).toList();
+        return new ArrayList<>(y);
 
-            keyboardHook.addKeyListener(new GlobalKeyListener() {
-                @Override
-                public void keyPressed(GlobalKeyEvent event) {
-                    if (event.getVirtualKeyCode() == keybinds[0]) {
-                        playerHandler.previousSong();
-                    }
-                    if (event.getVirtualKeyCode() == keybinds[1]) {
-                        playerHandler.pauseSong();
-                    }
-                    if (event.getVirtualKeyCode() == keybinds[2]) {
-                        playerHandler.nextSong();
-                    }
-                    if (event.isWinPressed() && event.getVirtualKeyCode() == keybinds[3]) {
-                        playerHandler.searchSong();
-                    }
-                }
-
-                @Override
-                public void keyReleased(GlobalKeyEvent event) {
-                }
-            });
-        }).start();
     }
 }

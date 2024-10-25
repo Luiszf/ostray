@@ -14,7 +14,6 @@ public class PathHandler {
     public PathHandler(){
         FilePicker filePicker = new FilePicker(true);
         rootPath = filePicker.chooseDir;
-        System.out.println(rootPath);
     }
 
 
@@ -24,7 +23,7 @@ public class PathHandler {
 
         FilenameFilter filter = new MyFileFilter(query.trim());
 
-        songs = Arrays.stream(dic.listFiles(filter)).map(e -> e.getAbsolutePath()).collect(Collectors.toList());
+        songs = Arrays.stream(Objects.requireNonNull(dic.listFiles(filter))).map(File::getAbsolutePath).collect(Collectors.toList());
 
         return songs;
     }
@@ -45,7 +44,7 @@ class MyFileFilter implements FilenameFilter {
 
     @Override
     public boolean accept(File dir, String name) {
-        return name.toLowerCase(Locale.ROOT).contains(query) && name.endsWith(".mp3");
+        return name.toLowerCase(Locale.ROOT).trim().contains(query) && name.endsWith(".mp3");
     }
 
 
