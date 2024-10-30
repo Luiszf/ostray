@@ -21,10 +21,9 @@ public class PathHandler {
 
         File dic = new File(rootPath);
 
-        FilenameFilter filter = new MyFileFilter(query.trim());
+        FilenameFilter filter = new MyFileFilter(query.replaceAll("\\s", ""));
 
         songs = Arrays.stream(Objects.requireNonNull(dic.listFiles(filter))).map(File::getAbsolutePath).collect(Collectors.toList());
-
         return songs;
     }
 

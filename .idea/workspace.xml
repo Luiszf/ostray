@@ -5,12 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a48ca0c2-34af-49f7-a51e-8b7858216723" name="Changes" comment="initial commit">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.profileconfig.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/profile.jfr" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/luis/PlayerHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luis/PlayerHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/luis/components/Tray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luis/components/Tray.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/luis/GlobalListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luis/GlobalListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/luis/PathHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luis/PathHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/luis/components/SearchBar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luis/components/SearchBar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/luis/components/SettingsScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/luis/components/SettingsScreen.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,43 +84,43 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run with VisualVM",
-    "Gradle.Build OSTtray.executor": "Run",
-    "Gradle.C:/Users/Luis/Development/OSTtray [Main.main()].executor": "Run",
-    "Gradle.OSTtray [:Main.main()].executor": "Run",
-    "Gradle.OSTtray [assemble].executor": "Run",
-    "Gradle.OSTtray [buildDependents].executor": "Run",
-    "Gradle.OSTtray [build].executor": "Run",
-    "Gradle.OSTtray [clean].executor": "Run",
-    "Gradle.OSTtray [dependencies].executor": "Run",
-    "Gradle.OSTtray [init].executor": "Run",
-    "Gradle.OSTtray [jar].executor": "Run",
-    "Gradle.OSTtray [run].executor": "Run",
-    "Gradle.OSTtray [shadowJar].executor": "Run",
-    "Gradle.OSTtray [wrapper].executor": "Run",
-    "JAR Application.OSTray.jar.executor": "Run",
-    "JAR Application.OSTtray-1.0-SNAPSHOT-all.jar.executor": "Run",
-    "JAR Application.OSTtray-1.0-SNAPSHOT.jar.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Luis/Development/OSTtray/src/main/resources",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run with VisualVM&quot;,
+    &quot;Gradle.Build OSTtray.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.C:/Users/Luis/Development/OSTtray [Main.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.OSTtray [:Main.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.OSTtray [assemble].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.OSTtray [buildDependents].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.OSTtray [build].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.OSTtray [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.OSTtray [dependencies].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.OSTtray [init].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.OSTtray [jar].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.OSTtray [run].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.OSTtray [shadowJar].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.OSTtray [wrapper].executor&quot;: &quot;Run&quot;,
+    &quot;JAR Application.OSTray.jar.executor&quot;: &quot;Run&quot;,
+    &quot;JAR Application.OSTtray-1.0-SNAPSHOT-all.jar.executor&quot;: &quot;Run&quot;,
+    &quot;JAR Application.OSTtray-1.0-SNAPSHOT.jar.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Luis/Development/OSTtray/src/main/resources&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Luis\Development\OSTtray\src\main\resources" />
     </key>
   </component>
-  <component name="RunManager" selected="JAR Application.OSTtray-1.0-SNAPSHOT-all.jar">
+  <component name="RunManager" selected="Gradle.OSTtray [shadowJar]">
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="zulu-21" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -255,8 +254,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JAR Application.OSTtray-1.0-SNAPSHOT-all.jar" />
         <item itemvalue="Gradle.OSTtray [shadowJar]" />
+        <item itemvalue="JAR Application.OSTtray-1.0-SNAPSHOT-all.jar" />
         <item itemvalue="Gradle.OSTtray [init]" />
         <item itemvalue="Gradle.OSTtray [dependencies]" />
         <item itemvalue="Gradle.OSTtray [build]" />

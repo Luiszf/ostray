@@ -38,7 +38,7 @@ public class SettingsScreen extends JPanel{
         JLabel text = new JLabel("change root file: ");
 
         JLabel prev = new JLabel("prev");
-        JLabel play = new JLabel("play");
+        JLabel play = new JLabel("play/pause");
         JLabel next = new JLabel("next");
         JLabel search = new JLabel("search");
         JTextField prevInput = new JTextField(20);

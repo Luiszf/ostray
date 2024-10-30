@@ -11,7 +11,6 @@ import java.util.Arrays;
 import java.util.Locale;
 
 public class SearchBar extends Frame {
-
     public SearchBar(PlayerHandler playerHandler, PathHandler pathHandler) {
 
         Frame frame = new Frame();
@@ -53,17 +52,18 @@ public class SearchBar extends Frame {
                 if (e.getKeyCode() == 27) {
                     frame.dispose();
                 }
-                songList.removeAll();
-                String query = textField.getText().toLowerCase(Locale.ROOT);
-                var list = playerHandler.getSongs(query);
-                for(int i = 0; i < list.size();  i++){
-                    if (list.size() <= playerHandler.index + i) return;
-                    String formatedPath = Arrays.stream(list.get(playerHandler.index + i).split("\\\\")).toList().getLast();
-                    songList.add(formatedPath);
-                }
+
 
                 if (e.getKeyCode() == KeyEvent.VK_ENTER) {
-                    songList.requestFocus();
+                    songList.removeAll();
+                    String query = textField.getText().replaceAll("\\s", "").toLowerCase(Locale.ROOT);
+                    var list = playerHandler.getSongs(query);
+                    for(int i = 0; i < list.size();  i++){
+                        if (list.size() <= playerHandler.index + i) return;
+                        String formatedPath = Arrays.stream(list.get(playerHandler.index + i).split("\\\\")).toList().getLast();
+                        songList.add(formatedPath);
+                    }
+                    playerHandler.getSongs("");
                 }
                 if (e.getKeyCode() == KeyEvent.VK_ALT) {
                     checkbox.setState(!checkbox.getState());
@@ -112,5 +112,6 @@ public class SearchBar extends Frame {
         frame.setLayout(null);
 
         frame.setVisible(true);
+        textField.requestFocus();
     }
 }

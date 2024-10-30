@@ -27,7 +27,7 @@ public class GlobalListener implements NativeKeyListener {
             playerHandler.previousSong();
         }
         if (optionsToKeybind(gs.options.get(2)).toString().equals(keyPressed.toString())){
-            playerHandler.play();
+            playerHandler.pauseSong();
         }
         if (optionsToKeybind(gs.options.get(3)).toString().equals(keyPressed.toString())){
             playerHandler.nextSong();
