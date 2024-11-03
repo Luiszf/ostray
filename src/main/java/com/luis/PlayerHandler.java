@@ -27,7 +27,7 @@ public class PlayerHandler {
     }
 
     public void addSong(String songPath) {
-        songs = pathHandler.addMusicFiles(songPath, index);
+        songs = pathHandler.addMusicFiles(songPath, index, songs);
     }
 
     public void getPlayer() {
@@ -85,7 +85,7 @@ public class PlayerHandler {
         play();
     }
     public void searchSong() {
-        new SearchBar(this, pathHandler);
+        new SearchBar(this);
     }
 
     private AudioInputStream pathToAudioInput(String path) {
